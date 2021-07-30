@@ -3,7 +3,7 @@ const router = express.Router();
 const programmingLanguages = require('../exoplanets');
 
 /* GET programming languages. */
-router.get('/', async function(req, res, next) {
+router.get('/', function(req, res, next) {
   try {
     res.json(await programmingLanguages.getMultiple(req.query.page));
   } catch (err) {
