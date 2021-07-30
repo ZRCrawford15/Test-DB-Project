@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const programmingLanguages = require('../exoplanets');
+const exoplanets = require('../exoplanets');
 
 /* GET programming languages. */
 router.get('/', function(req, res, next) {
   try {
-    res.json(await programmingLanguages.getMultiple(req.query.page));
+    res.json(await exoplanets.getMultiple(req.query.page));
   } catch (err) {
-    console.error(`Error while getting programming languages `, err.message);
+    console.error(`Error while getting exoplanets `, err.message);
     next(err);
   }
 });
